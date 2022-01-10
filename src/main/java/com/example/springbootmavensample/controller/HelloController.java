@@ -10,11 +10,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 // @~はアノテーション（注釈）プログラムに関する補足情報を提供します
 // このクラスがコントローラーであることを示します
 @Controller
+// @RequestMappingはクラスにも指定できる
+// この場合、http://localhost:8080/top/confirm などとなる
+@RequestMapping("/top")   // クラスレベルでの指定
 public class HelloController {
 
   // HTTPリクエストを受け付ける
   // 引数に "/" を指定したので http://localhost:8080/ でアクセス可能
-  @RequestMapping("/")
+  @RequestMapping("/")    // メソッドレベルでの指定
   public String index() {
     // hello.htmlを呼び出します
     // templatesフォルダの hello.html を呼び出せます
